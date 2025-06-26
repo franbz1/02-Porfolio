@@ -17,7 +17,7 @@ export default function HeroSection() {
           <div className="w-40 h-40 mx-auto mb-4 relative group">
             <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 dark:from-blue-500 dark:via-purple-500 dark:to-pink-500 p-0.5">
               <Image
-                src="/pfp porfolio.jpg"
+                src="/pfp porfolio.webp"
                 alt="Profile"
                 width={100}
                 height={100}

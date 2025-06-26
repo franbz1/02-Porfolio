@@ -2,6 +2,7 @@
 
 import { ArrowUpRight, ExternalLink } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 interface ProjectCardProps {
   project: {
@@ -9,6 +10,10 @@ interface ProjectCardProps {
     description: string
     year: string
     tech: string[]
+    hasLiveDemo: boolean
+    repoUrl: string
+    liveDemoUrl?: string
+    imageUrl: string
   }
   index: number
   viewCodeText: string
@@ -21,10 +26,13 @@ export default function ProjectCard({ project, index, viewCodeText, liveDemoText
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
           <div className="aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-400/10 dark:from-blue-500/20 dark:to-purple-500/20"></div>
-            <div className="absolute bottom-4 right-4 w-8 h-8 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center">
-              <ArrowUpRight className="w-4 h-4 text-gray-600 dark:text-gray-400" />
-            </div>
+            <Image
+              src={project.imageUrl}
+              alt={project.title}
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
           </div>
         </div>
 
@@ -53,19 +61,25 @@ export default function ProjectCard({ project, index, viewCodeText, liveDemoText
 
           <div className="flex items-center space-x-6">
             <Link
-              href="#"
+              href={project.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
             >
               <span className="text-sm">{viewCodeText}</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
-            <Link
-              href="#"
-              className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
-            >
-              <span className="text-sm">{liveDemoText}</span>
-              <ExternalLink className="w-4 h-4" />
-            </Link>
+            {project.hasLiveDemo && project.liveDemoUrl && (
+              <Link
+                href={project.liveDemoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+              >
+                <span className="text-sm">{liveDemoText}</span>
+                <ExternalLink className="w-4 h-4" />
+              </Link>
+            )}
           </div>
         </div>
       </div>
