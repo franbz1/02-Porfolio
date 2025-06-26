@@ -39,11 +39,11 @@ export default function Component() {
           {/* Hero Section */}
           <HeroSection />
 
-          {/* Work Section */}
-          <WorkSection />
-
           {/* About Section */}
           <AboutSection />
+
+          {/* Work Section */}
+          <WorkSection />
 
           {/* Contact Section */}
           <ContactSection />

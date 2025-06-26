@@ -17,19 +17,25 @@ export default function Footer() {
         </p>
         <div className="flex items-center space-x-6 mt-4 sm:mt-0">
           <Link
-            href="#"
+            href="https://github.com/franbz1"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           >
             <Github className="w-4 h-4" />
           </Link>
           <Link
-            href="#"
+            href="https://www.linkedin.com/in/franvz1"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           >
             <Linkedin className="w-4 h-4" />
           </Link>
           <Link
-            href="#"
+            href="mailto:franciscorualesp15@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           >
             <Mail className="w-4 h-4" />

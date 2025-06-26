@@ -39,17 +39,17 @@ export default function HeroSection() {
         </p>
 
         <div className="flex items-center justify-center space-x-8">
-          <Link href="#" className="group">
+          <Link href="https://github.com/franbz1" target="_blank" rel="noopener noreferrer" className="group">
             <div className="w-12 h-12 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center group-hover:border-gray-400 dark:group-hover:border-gray-500 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
               <Github className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors" />
             </div>
           </Link>
-          <Link href="#" className="group">
+          <Link href="https://www.linkedin.com/in/franvz1" target="_blank" rel="noopener noreferrer" className="group">
             <div className="w-12 h-12 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center group-hover:border-gray-400 dark:group-hover:border-gray-500 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
               <Linkedin className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors" />
             </div>
           </Link>
-          <Link href="#" className="group">
+          <Link href="mailto:franciscorualesp15@gmail.com" target="_blank" rel="noopener noreferrer" className="group">
             <div className="w-12 h-12 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center group-hover:border-gray-400 dark:group-hover:border-gray-500 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
               <Mail className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors" />
             </div>
