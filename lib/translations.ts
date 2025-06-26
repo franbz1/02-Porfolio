@@ -204,7 +204,7 @@ export const translations = {
           ],
           year: "2025",
           hasLiveDemo: false,
-          repoUrl: "https://github.com/franbz1/hotel-san-miguel-f",
+          repoUrl: "https://github.com/franbz1/hotel-san-miguel",
           imageUrl: "/hsm.webp",
         },
         {
@@ -222,7 +222,7 @@ export const translations = {
           ],
           year: "2025",
           hasLiveDemo: false,
-          repoUrl: "https://github.com/franbz1/hotel-san-miguel",
+          repoUrl: "https://github.com/franbz1/hotel-san-miguel-f",
           imageUrl: "/hsmf.webp",
         },
         {
