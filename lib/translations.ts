@@ -112,7 +112,7 @@ export const translations = {
       title: "About Me",
       description: [
         "I'm a Software Engineering student 4.8 GPA and full-stack developer with 5+ years of hands-on experience. I love breaking down complex problems into clear steps, leading teams, and delivering scalable solutions.",
-        "Outside of code, I tutor at UCC, explore cloud architectures (Clean, Hexagonal, Event-Driven), and co-run a gift-shop startup, learning brand building and finance.",
+        "Outside of code, I tutor at UCC, explore cloud architectures (Clean, Hexagonal, Event-Driven), and co-run a gift-shop, learning brand building and finance.",
       ],
       downloadResume: "Download Resume",
       experience: {
@@ -278,8 +278,8 @@ export const translations = {
     about: {
       title: "Acerca de Mí",
       description: [
-        "Soy estudiante de Ingeniería de Software Promedio de 4.8 y desarrollador full-stack con más de 5 años de experiencia práctica. Disfruto descomponer problemas complejos, liderar equipos y entregar soluciones escalables.",
-        "Fuera del código, doy tutorías en la UCC, exploro arquitecturas cloud (Clean, Hexagonal, Event-Driven) y co-dirijo una startup de artículos de regalo, aprendiendo sobre marca y finanzas.",
+        "Soy estudiante de Ingeniería de Software con promedio de 4.8 y desarrollador full-stack con más de 5 años de experiencia práctica. Disfruto descomponer problemas complejos, liderar equipos y entregar soluciones escalables.",
+        "Fuera del código, doy tutorías en la UCC, exploro arquitecturas cloud (Clean, Hexagonal, Event-Driven) y co-dirijo un emprendimiento de artículos de regalo, aprendiendo sobre marca y finanzas.",
       ],
       downloadResume: "Descargar CV",
       experience: {
