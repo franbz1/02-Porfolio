@@ -9,8 +9,9 @@ import ContactSection from "./components/portfolio/ContactSection"
 import Footer from "./components/portfolio/Footer"
 import InteractiveBackground from "./components/portfolio/InteractiveBackground"
 import { LanguageProvider } from "./hooks/useLanguage"
+import SEOHead from "@/components/SEOHead"
 
-export default function Component() {
+export default function Portfolio() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function Component() {
 
   return (
     <LanguageProvider>
+      <SEOHead />
       <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 relative">
         {/* Interactive Background Canvas */}
         <InteractiveBackground mounted={mounted} />

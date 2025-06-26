@@ -11,32 +11,36 @@ export default function HeroSection() {
   const t = translations[language]
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden" itemScope itemType="https://schema.org/Person">
       <div className="text-center max-w-4xl mx-auto px-8">
         <div className="mb-12">
           <div className="w-40 h-40 mx-auto mb-4 relative group">
             <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 dark:from-blue-500 dark:via-purple-500 dark:to-pink-500 p-0.5">
-              <Image
-                src="/pfp porfolio.webp"
-                alt="Profile"
-                width={100}
-                height={100}
-                className="w-full h-full rounded-full object-cover bg-white dark:bg-gray-800 transition-transform duration-300 group-hover:scale-105"
-              />
+                          <Image
+              src="/pfp porfolio.webp"
+              alt="Francisco Ruales - Desarrollador Full-Stack"
+              width={160}
+              height={160}
+              className="w-full h-full rounded-full object-cover bg-white dark:bg-gray-800 transition-transform duration-300 group-hover:scale-105"
+              itemProp="image"
+              priority
+            />
             </div>
           </div>
         </div>
 
-        <h1 className="text-6xl lg:text-8xl font-light mb-8 tracking-tight">
-          <span className="block text-gray-400 dark:text-gray-500 text-2xl lg:text-3xl font-normal mb-4">
-            {t.hero.greeting}
-          </span>
-          {t.hero.name}
-        </h1>
+        <header>
+          <h1 className="text-6xl lg:text-8xl font-light mb-8 tracking-tight">
+            <span className="block text-gray-400 dark:text-gray-500 text-2xl lg:text-3xl font-normal mb-4">
+              {t.hero.greeting}
+            </span>
+            <span itemProp="name">{t.hero.name}</span>
+          </h1>
 
-        <p className="text-xl lg:text-2xl text-gray-500 dark:text-gray-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-          {t.hero.description}
-        </p>
+          <p className="text-xl lg:text-2xl text-gray-500 dark:text-gray-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed" itemProp="description">
+            {t.hero.description}
+          </p>
+        </header>
 
         <div className="flex items-center justify-center space-x-8">
           <Link href="https://github.com/franbz1" target="_blank" rel="noopener noreferrer" className="group">
