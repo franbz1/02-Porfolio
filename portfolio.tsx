@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import Navigation from "./components/portfolio/Navigation"
 import HeroSection from "./components/portfolio/HeroSection" 
 import WorkSection from "./components/portfolio/WorkSection"
@@ -8,6 +8,7 @@ import AboutSection from "./components/portfolio/AboutSection"
 import ContactSection from "./components/portfolio/ContactSection"
 import Footer from "./components/portfolio/Footer"
 import InteractiveBackground from "./components/portfolio/InteractiveBackground"
+import { LanguageProvider } from "./hooks/useLanguage"
 
 export default function Component() {
   const [mounted, setMounted] = useState(false)
@@ -25,30 +26,32 @@ export default function Component() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 relative">
-      {/* Interactive Background Canvas */}
-      <InteractiveBackground mounted={mounted} />
+    <LanguageProvider>
+      <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 relative">
+        {/* Interactive Background Canvas */}
+        <InteractiveBackground mounted={mounted} />
 
-      {/* Navigation */}
-      <Navigation />
+        {/* Navigation */}
+        <Navigation />
 
-      {/* Content with relative positioning */}
-      <div className="relative z-10">
-        {/* Hero Section */}
-        <HeroSection />
+        {/* Content with relative positioning */}
+        <div className="relative z-10">
+          {/* Hero Section */}
+          <HeroSection />
 
-        {/* Work Section */}
-        <WorkSection />
+          {/* Work Section */}
+          <WorkSection />
 
-        {/* About Section */}
-        <AboutSection />
+          {/* About Section */}
+          <AboutSection />
 
-        {/* Contact Section */}
-        <ContactSection />
+          {/* Contact Section */}
+          <ContactSection />
 
-        {/* Footer */}
-        <Footer />
+          {/* Footer */}
+          <Footer />
+        </div>
       </div>
-    </div>
+    </LanguageProvider>
   )
 }
