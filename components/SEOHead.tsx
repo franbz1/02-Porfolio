@@ -4,6 +4,9 @@ import { useLanguage } from "@/hooks/useLanguage"
 import { generateStructuredData } from "@/lib/seo"
 import { useEffect } from "react"
 
+// Configuración para build estático
+export const dynamic = 'force-static'
+
 export default function SEOHead() {
   const { language } = useLanguage()
 

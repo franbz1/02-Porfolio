@@ -6,6 +6,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
 
+// Configuración para build estático
+export const dynamic = 'force-static'
+
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = generateSEOMetadata('es')

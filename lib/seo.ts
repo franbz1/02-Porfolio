@@ -1,5 +1,8 @@
 import { Metadata } from 'next'
 
+// Configuración para build estático
+export const dynamic = 'force-static'
+
 export interface SEOConfig {
   title: string
   description: string
