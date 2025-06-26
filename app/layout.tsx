@@ -5,6 +5,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
+import { Analytics } from '@vercel/analytics/next';
 
 // Configuración para build estático
 export const dynamic = 'force-static'
@@ -34,6 +35,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
         <Toaster />
+        <Analytics />
       </body>
     </html>
   )
