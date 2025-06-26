@@ -1,13 +1,77 @@
 "use client"
 
-import { Download } from "lucide-react"
+import { Download, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "../../hooks/useLanguage"
 import { translations } from "../../lib/translations"
+import { useState } from "react"
+import { useToast } from "../../hooks/use-toast"
 
 export default function AboutSection() {
   const { language } = useLanguage()
   const t = translations[language]
+  const { toast } = useToast()
+  const [isDownloading, setIsDownloading] = useState(false)
+
+  const getCVFileName = () => {
+    switch (language) {
+      case 'es':
+        return 'CV_Francisco_Ruales_2025_ES.pdf'
+      case 'en':
+        return 'CV_Francisco_Ruales_2025_EN.pdf'
+      default:
+        return 'CV_Francisco_Ruales_2025_ES.pdf'
+    }
+  }
+
+  const handleDownload = async () => {
+    if (isDownloading) return
+
+    setIsDownloading(true)
+    const fileName = getCVFileName()
+    const filePath = `/${fileName}`
+
+    try {
+      // Verificar si el archivo existe
+      const response = await fetch(filePath, { method: 'HEAD' })
+      
+      if (!response.ok) {
+        throw new Error(`Archivo no encontrado: ${response.status}`)
+      }
+
+      // Crear y ejecutar la descarga
+      const link = document.createElement('a')
+      link.href = filePath
+      link.download = fileName
+      link.style.display = 'none'
+      
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+
+      // Mostrar notificación de éxito
+      toast({
+        title: language === 'es' ? "Descarga iniciada" : "Download started",
+        description: language === 'es' 
+          ? "El CV se está descargando..." 
+          : "The CV is being downloaded...",
+      })
+
+    } catch (error) {
+      console.error('Error al descargar el CV:', error)
+      
+      // Mostrar notificación de error
+      toast({
+        title: language === 'es' ? "Error en la descarga" : "Download error",
+        description: language === 'es' 
+          ? "No se pudo descargar el CV. Por favor, inténtalo de nuevo." 
+          : "Could not download the CV. Please try again.",
+        variant: "destructive"
+      })
+    } finally {
+      setIsDownloading(false)
+    }
+  }
 
   return (
     <section id="about" className="py-32 px-8 bg-gray-50/80 dark:bg-gray-800/50 backdrop-blur-sm">
@@ -22,9 +86,20 @@ export default function AboutSection() {
             </div>
 
             <div className="mt-12">
-              <Button className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-gray-900 rounded-full px-8 py-3 transition-colors">
-                <Download className="w-4 h-4 mr-2" />
-                {t.about.downloadResume}
+              <Button 
+                onClick={handleDownload} 
+                disabled={isDownloading}
+                className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-gray-900 rounded-full px-8 py-3 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isDownloading ? (
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                ) : (
+                  <Download className="w-4 h-4 mr-2" />
+                )}
+                {isDownloading 
+                  ? (language === 'es' ? 'Descargando...' : 'Downloading...') 
+                  : t.about.downloadResume
+                }
               </Button>
             </div>
           </div>
